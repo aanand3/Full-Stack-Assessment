@@ -46,7 +46,7 @@ public class BookController
             }
             if (newBook.isFavorite() != currBook.isFavorite())
             {
-                newBook.setFavorite(currBook.isFavorite());
+                currBook.setFavorite(newBook.isFavorite());
             }
 
             return repo.save(currBook);
