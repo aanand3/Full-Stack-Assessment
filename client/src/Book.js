@@ -23,6 +23,9 @@ Book.propTypes = {
 
 export default Book
 
+//helper functions below
+
+// return title and author as td's, bolded if fav'd
 function buildBookInfo(book)
 {
     if (book.favorite)
@@ -40,6 +43,7 @@ function buildFavoriteButton(book, fetchAllItems)
     return <button onClick={() => handleFavoriteClick(book, fetchAllItems)}>Favorite</button>
 }
 
+// performs the patch and update
 async function handleFavoriteClick(book, fetchAllItems)
 {
     await patchToBecomeFavorite(book);
@@ -73,6 +77,7 @@ function buildDeleteButton(book, fetchAllItems)
     return <button onClick={() => handleDeleteClick(book, fetchAllItems)}>Delete</button>
 }
 
+// performs DELETE and refetch
 async function handleDeleteClick(book, fetchAllItems)
 {
     await deleteBook(book);

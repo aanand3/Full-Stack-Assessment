@@ -21,6 +21,7 @@ export class App extends Component
     this.fetchAllItems();
   }
 
+  // basic async fetcher fn
   async fetchAllItems()
   {
     try
